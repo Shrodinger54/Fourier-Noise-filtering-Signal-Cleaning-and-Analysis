@@ -12,7 +12,7 @@ This report outlines a numerical verification system design to isolate weak sinu
  
 **Spectral Analysis via FFT** the FFT is employed to transition from the time domain x(t) to the frequency domain X(f).
 
-* **Digital Filtering and Reconstruction** to recover the original signal, a **frequency domain band-pass filter** is implemented
+**Digital Filtering and Reconstruction** to recover the original signal, a **frequency domain band-pass filter** is implemented
 1. Masking: a logical mask is created to identify indices within the desired passband (e.g. 40 Hz to 60 Hz for a motor vibration)
 2. frequencies outside this are zeroed out.
 3. Inverse Transform: (np.fft.ifft) converts the cleaned spectrum back to the time domain, "scrubbing" the noise and isolating the target oscillation.
